@@ -13,7 +13,7 @@ class My_landing_page_mcp
     $vars['page_title'] = $settings['landing_page_title'];
     $vars['page_content'] = $settings['landing_page_content'];
 
-    $vars['setting_page_url'] = ee('CP/URL')->make('addons/my_landing_page/settings');
+    $vars['setting_page_url'] = ee('CP/URL')->make('addons/settings/my_landing_page/settings');
 
     return array(
       'heading'     => $vars['page_title'],
