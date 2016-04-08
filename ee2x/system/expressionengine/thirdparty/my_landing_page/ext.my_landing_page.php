@@ -72,7 +72,42 @@ class My_landing_page_ext
     // echo BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page';
     if ($hook_data->can_access_cp)
     {
-      // ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page');
+      // I can't believe we have to do all this crap :/
+      // Fortunately, EE3 is doing WAY BETTER here !
+      if (version_compare(APP_VER, '2.6.0', '=<'))
+      {
+        ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page');
+      }
+      elseif (version_compare(APP_VER, '2.7.3', '=<'))
+      {
+        $s = 0;
+        if (ee()->config->item('admin_session_type') == 's')
+        {
+          $s = ee()->session->userdata('session_id', 0);
+        }
+        else if (ee()->config->item('admin_session_type') == 'cs')
+        {
+          $s = ee()->session->userdata('fingerprint', 0);
+        }
+
+        $base = SELF.'?S='.$s.'&amp;D=cp';
+        ee()->functions->redirect($base.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page');
+      }
+      else
+      {
+        $s = 0;
+        if (ee()->config->item('cp_session_type') == 's')
+        {
+          $s = ee()->session->userdata('session_id', 0);
+        }
+        else if (ee()->config->item('cp_session_type') == 'cs')
+        {
+          $s = ee()->session->userdata('fingerprint', 0);
+        }
+
+        $base = SELF.'?S='.$s.'&amp;D=cp';
+        ee()->functions->redirect($base.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page');
+      }
     }
   }
 }
