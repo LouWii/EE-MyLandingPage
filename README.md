@@ -2,7 +2,7 @@
 
 **My Landing Page** is an ExpressionEngine CMS add-on that will redirect user logging into the control panel to a specific page that you can entirely customize.
 
-## Licence
+## License
 
 [**Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
