@@ -74,11 +74,11 @@ class My_landing_page_ext
     {
       // I can't believe we have to do all this crap :/
       // Fortunately, EE3 is doing WAY BETTER here !
-      if (version_compare(APP_VER, '2.6.0', '=<'))
+      if (version_compare(APP_VER, '2.6.0', '<='))
       {
         ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=my_landing_page');
       }
-      elseif (version_compare(APP_VER, '2.7.3', '=<'))
+      elseif (version_compare(APP_VER, '2.7.3', '<='))
       {
         $s = 0;
         if (ee()->config->item('admin_session_type') == 's')
