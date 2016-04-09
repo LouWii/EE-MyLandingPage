@@ -1,5 +1,7 @@
 # My Landing Page
 
+![Animation of My Landing Page use in EE3](https://blog.louwii.fr/wp-content/uploads/2016/04/My-Landing-Page-on-EE3.gif)
+
 **My Landing Page** is an ExpressionEngine CMS add-on that will redirect user logging into the control panel to a specific page that you can entirely customize.
 
 ## Licence
