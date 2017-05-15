@@ -13,7 +13,7 @@ class My_landing_page_upd
      'module_name' => 'My_landing_page' ,
      'module_version' => $this->version,
      'has_cp_backend' => 'y',
-     'has_publish_fields' => 'y'
+     'has_publish_fields' => 'n'
     );
 
     ee()->db->insert('modules', $data);
